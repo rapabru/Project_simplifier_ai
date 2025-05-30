@@ -1,0 +1,5 @@
+{
+  "name": "Project Context Exporter",
+  "description": "A tool to instantly transform your entire project folder into a single, AI-ready text block. It intelligently excludes common clutter like node_modules, cache files, and dependencies, processing everything locally in your browser for 100% privacy. Perfect for sharing codebase context with AI models for reviews, debugging, or architecture discussions.",
+  "requestFramePermissions": []
+}
