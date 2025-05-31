@@ -11,7 +11,7 @@ export const ThemeToggleButton: React.FC<ThemeToggleButtonProps> = ({ theme, tog
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      className="p-2 rounded-full text-blue-600 dark:text-amber-300 bg-white dark:bg-[#232b3b] hover:bg-blue-50 dark:hover:bg-[#2d3650] border border-blue-200 dark:border-amber-400 shadow focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-amber-400 transition-colors duration-150"
       aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
     >
       {theme === 'light' ? (
