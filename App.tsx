@@ -123,22 +123,22 @@ const App: React.FC = () => {
 
 
   return (
-    <div className="min-h-screen flex flex-col items-center p-4 sm:p-6 md:p-8 bg-white dark:bg-gray-900 text-slate-800 dark:text-slate-100 selection:bg-sky-500 selection:text-white transition-colors duration-300">
+    <div className="min-h-screen flex flex-col items-center p-4 sm:p-6 md:p-8 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 selection:bg-blue-500 selection:text-white transition-colors duration-300">
       <div className="w-full max-w-4xl mx-auto">
         <Header theme={theme} toggleTheme={toggleTheme} />
         
-        <main className="mt-8 bg-white dark:bg-slate-800 shadow-2xl rounded-xl p-6 md:p-8">
+        <main className="mt-8 bg-white dark:bg-gray-800 shadow-2xl rounded-xl p-6 md:p-8">
           <FileSelector onFilesSelected={processFiles} isLoading={isLoading} ref={fileInputRef} />
 
           {error && (
-            <div className="mt-4 p-3 bg-red-100 text-red-700 border border-red-400 dark:bg-red-500/20 dark:text-red-300 dark:border-red-500 rounded-md">
+            <div className="mt-4 p-3 bg-red-50 text-red-700 border border-red-300 dark:bg-red-900/40 dark:text-red-300 dark:border-red-600/50 rounded-md">
               <p><strong>Error:</strong> {error}</p>
             </div>
           )}
 
           {isLoading && (
-            <div className="mt-6 flex flex-col items-center justify-center text-slate-600 dark:text-slate-300">
-              <LoadingSpinner className="w-12 h-12 mb-3 text-sky-500 dark:text-sky-400" />
+            <div className="mt-6 flex flex-col items-center justify-center text-gray-600 dark:text-gray-300">
+              <LoadingSpinner className="w-12 h-12 mb-3 text-blue-500 dark:text-blue-400" />
               <p className="text-lg">Processing files... This might take a moment.</p>
               <p className="text-sm">Scanned: {fileStats.scanned}, Included: {fileStats.included}, Excluded: {fileStats.excluded}</p>
             </div>
@@ -153,22 +153,22 @@ const App: React.FC = () => {
           )}
 
           {(!isLoading && !outputContent && fileStats.scanned > 0 && !error) && (
-             <div className="mt-6 p-4 bg-sky-100 text-sky-700 border border-sky-300 dark:bg-sky-500/10 dark:text-sky-300 dark:border-sky-500/30 rounded-md text-center">
+             <div className="mt-6 p-4 bg-blue-50 text-blue-700 border border-blue-300 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-600/40 rounded-md text-center">
                 <p className="font-medium">No text files found to include based on the current filters.</p>
                 <p className="text-sm">All {fileStats.scanned} scanned files were excluded or empty.</p>
             </div>
           )}
           
-          <div className="mt-8 p-4 bg-slate-100 dark:bg-slate-700/50 rounded-lg border border-slate-300 dark:border-slate-600">
-            <h3 className="text-lg font-semibold text-sky-600 dark:text-sky-400 mb-2">How to Use:</h3>
-            <ol className="list-decimal list-inside space-y-1 text-slate-700 dark:text-slate-300 text-sm">
+          <div className="mt-8 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg border border-gray-300 dark:border-gray-600">
+            <h3 className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-2">How to Use:</h3>
+            <ol className="list-decimal list-inside space-y-1 text-gray-700 dark:text-gray-300 text-sm">
               <li>Click the "Select Project Folder" button.</li>
               <li>Choose the root folder of your project.</li>
-              <li>The tool processes files locally, excluding common clutter (like <code className="bg-slate-300 dark:bg-slate-600 px-1 rounded text-xs">node_modules</code>, <code className="bg-slate-300 dark:bg-slate-600 px-1 rounded text-xs">.git</code>).</li>
+              <li>The tool processes files locally, excluding common clutter (like <code className="bg-gray-200 dark:bg-gray-600 px-1 rounded text-xs">node_modules</code>, <code className="bg-gray-200 dark:bg-gray-600 px-1 rounded text-xs">.git</code>).</li>
               <li>Review the statistics and the generated output below.</li>
               <li>Click "Copy to Clipboard" and paste into your AI tool (Claude, ChatGPT, Gemini, etc.).</li>
             </ol>
-            <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">
+            <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
               Your files are processed entirely in your browser. No data is uploaded.
             </p>
           </div>

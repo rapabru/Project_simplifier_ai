@@ -33,7 +33,7 @@ export const OutputDisplay: React.FC<OutputDisplayProps> = ({ content }) => {
   return (
     <div className="mt-6">
       <div className="flex justify-between items-center mb-2">
-        <h3 className="text-xl font-semibold text-sky-600 dark:text-sky-400">Combined Output</h3>
+        <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">Combined Output</h3>
         <button
           onClick={handleCopy}
           disabled={!content}
@@ -41,7 +41,7 @@ export const OutputDisplay: React.FC<OutputDisplayProps> = ({ content }) => {
             flex items-center px-4 py-2 rounded-md font-medium transition-colors duration-150 text-white
             ${copied 
               ? 'bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-500 dark:hover:bg-emerald-600' 
-              : 'bg-sky-500 hover:bg-sky-600 dark:bg-sky-600 dark:hover:bg-sky-700'}
+              : 'bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600'}
             disabled:opacity-50 disabled:cursor-not-allowed
           `}
         >
@@ -52,10 +52,10 @@ export const OutputDisplay: React.FC<OutputDisplayProps> = ({ content }) => {
       <textarea
         readOnly
         value={content}
-        className="w-full h-96 p-4 border border-slate-300 dark:border-slate-600 rounded-md bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-200 font-mono text-sm focus:ring-2 focus:ring-sky-500/70 dark:focus:ring-sky-500 focus:border-sky-500/70 dark:focus:border-sky-500 shadow-inner"
+        className="w-full h-96 p-4 border border-gray-300 dark:border-gray-600 rounded-md bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-200 font-mono text-sm focus:ring-2 focus:ring-blue-500/70 dark:focus:ring-blue-400 focus:border-blue-500/70 dark:focus:border-blue-400 shadow-inner"
         placeholder="Processed file contents will appear here..."
       />
-       <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+       <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
         Total length: {content.length} characters. Some AI models have context length limits.
       </p>
     </div>
