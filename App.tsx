@@ -35,7 +35,7 @@ const App: React.FC = () => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    setTheme((prevTheme: Theme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   const processFiles = useCallback(async (fileList: FileList | null) => {
@@ -123,11 +123,11 @@ const App: React.FC = () => {
 
 
   return (
-    <div className="min-h-screen flex flex-col items-center p-4 sm:p-6 md:p-8 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 selection:bg-blue-500 selection:text-white transition-colors duration-300">
+    <div className="min-h-screen flex flex-col items-center p-4 sm:p-6 md:p-8 bg-[#f4f7fa] dark:bg-[#181f2a] text-[#1e293b] dark:text-[#f1f5f9] selection:bg-blue-400 selection:text-amber-200 transition-colors duration-300">
       <div className="w-full max-w-4xl mx-auto">
         <Header theme={theme} toggleTheme={toggleTheme} />
         
-        <main className="mt-8 bg-white dark:bg-gray-800 shadow-2xl rounded-xl p-6 md:p-8">
+        <main className="mt-8 bg-white dark:bg-[#232b3b] shadow-2xl rounded-xl p-6 md:p-8">
           <FileSelector onFilesSelected={processFiles} isLoading={isLoading} ref={fileInputRef} />
 
           {error && (
