@@ -6,6 +6,7 @@ import { StatsDisplay } from './components/StatsDisplay';
 import type { FileStats } from './types';
 import { OutputDisplay } from './components/OutputDisplay';
 import { Footer } from './components/Footer';
+import { HowToAccordion } from './components/HowToAccordion';
 import { isFileExcluded } from './utils/fileFilter';
 import { LoadingSpinner } from './components/icons/LoadingSpinner';
 
@@ -159,19 +160,7 @@ const App: React.FC = () => {
             </div>
           )}
           
-          <div className="mt-8 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg border border-gray-300 dark:border-gray-600">
-            <h3 className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-2">How to Use:</h3>
-            <ol className="list-decimal list-inside space-y-1 text-gray-700 dark:text-gray-300 text-sm">
-              <li>Click the "Select Project Folder" button.</li>
-              <li>Choose the root folder of your project.</li>
-              <li>The tool processes files locally, excluding common clutter (like <code className="bg-gray-200 dark:bg-gray-600 px-1 rounded text-xs">node_modules</code>, <code className="bg-gray-200 dark:bg-gray-600 px-1 rounded text-xs">.git</code>).</li>
-              <li>Review the statistics and the generated output below.</li>
-              <li>Click "Copy to Clipboard" and paste into your AI tool (Claude, ChatGPT, Gemini, etc.).</li>
-            </ol>
-            <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
-              Your files are processed entirely in your browser. No data is uploaded.
-            </p>
-          </div>
+          <HowToAccordion />
         </main>
         <Footer />
       </div>
